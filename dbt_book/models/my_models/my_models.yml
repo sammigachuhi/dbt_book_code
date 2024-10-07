@@ -111,3 +111,41 @@ models:
 
       - name: trip_min_round
         description: '{{ doc("trip_min_round") }}'
+
+  - name: citi_trips_long
+    description: '{{ doc("citi_trips_long") }}'
+    columns:
+      - name: starttime
+        description: '{{ doc("starttime") }}'
+
+      - name: stoptime
+        description: '{{ doc("stoptime") }}'
+
+      - name: start_station_name
+        description: "Start Station Name"
+        tests:
+          - not_null
+          - unique
+          - long_characters
+          - special_characters
+      
+      - name: end_station_name
+        description: "End Station Name"
+
+      - name: gender
+        description: "Gender (unknown, male, female)"
+
+      - name: trip_duration_min
+        description: '{{ doc("trip_duration_min") }}'
+
+      - name: birth_year
+        description: "Year of Birth"
+      
+      - name: customer_plan
+        description: "The name of the plan that determines the rate charged for the trip"
+
+      - name: trip_min_round
+        description: '{{ doc("trip_min_round") }}'
+
+      
+    
